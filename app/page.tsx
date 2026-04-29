@@ -1,3 +1,6 @@
+import MetricsTable from "@/components/ui/metricsTable"
+import NumberPopIn from "@/components/ui/numberPopIn"
+
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import {
@@ -12,11 +15,9 @@ import {
 export default function Page() {
   return (
     <div className="px-6 py-14 space-y-8">
-
-      <h1 className="font-heading text-4xl lg:text-6xl leading-[1.05] tracking-tight">
-        One Ring to Rule Them All
-      </h1>
-
+        <h1 className="font-heading text-4xl lg:text-6xl leading-[1.05] tracking-tight">
+          One Ring to Rule Them All
+        </h1>
       <div className="flex items-center justify-between gap-4">
         <div className="flex gap-2 flex-wrap">
           <Badge
@@ -35,6 +36,12 @@ export default function Page() {
           Updated 21 Apr, 2026
         </span>
       </div>
+
+      <MetricsTable metrics={[
+        {label: 'text', body: '40.60', type: 'number'},
+        {label: 'text', body: 'text'},
+        {label: 'text', body: 'text'}
+      ]} />
 
       <div className="typography">
         <h2>test</h2>
