@@ -13,7 +13,7 @@ export default function Page() {
   return (
     <div className="px-6 py-14 space-y-8">
 
-      <h1 className="font-heading text-6xl lg:text-7xl leading-[1.05] tracking-tight">
+      <h1 className="font-heading text-4xl lg:text-6xl leading-[1.05] tracking-tight">
         One Ring to Rule Them All
       </h1>
 
@@ -37,6 +37,7 @@ export default function Page() {
       </div>
 
       <div className="typography">
+        <h2>test</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur{" "}
           <strong>adipiscing elit Ut et massa mi.</strong> Aliquam in hendrerit
