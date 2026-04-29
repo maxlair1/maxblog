@@ -25,7 +25,9 @@ export default function RootLayout({
       className={cn("antialiased", fontMono.variable, "font-sans", inter.variable, loraHeading.variable)}
     >
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <main className="max-w-[120ch] mx-auto">
+          <ThemeProvider>{children}</ThemeProvider>
+        </main>
       </body>
     </html>
   )
