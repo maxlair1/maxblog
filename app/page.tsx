@@ -1,148 +1,98 @@
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import Image from "next/image"
+import {
+  Card,
+  CardAction,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 
 export default function Page() {
   return (
-  <div className="size-full overflow-y-auto">
-    <div className="typography">
-      <h1>Styling the Web: A Modern CSS Journey</h1>
-      <p>
-        CSS has come a long way since its inception. From simple layout tweaks
-        to complex responsive designs, it's become an essential tool for
-        crafting delightful web experiences. In this article, we’ll explore
-        various HTML elements commonly styled with modern CSS utility systems
-        like <code>tailwindcss</code>
-        and component libraries.
-      </p>
-      <h2>Introduction</h2>
-      <p>
-        Web design today is more accessible than ever. Thanks to utility-first
-        frameworks and component-based architectures, developers can build
-        beautiful UIs with less effort.
-      </p>
-      <h3>Key Benefits of Utility CSS</h3>
-      <ul>
-        <li>Faster development</li>
-        <li>Consistent design system</li>
-        <li>Better collaboration between dev and design</li>
-      </ul>
-      <h3>What You Need</h3>
-      <ol>
-        <li>Basic HTML/CSS knowledge</li>
-        <li>Code editor (e.g., VS Code)</li>
-        <li>Modern browser for testing</li>
-      </ol>
-      <h2>Checklist</h2>
-      <ul>
-        <li>
-          <input checked disabled type="checkbox" /> <p>Install Tailwind CSS</p>
-        </li>
-        <li>
-          <input disabled type="checkbox" /> <p>Configure PostCSS</p>
-        </li>
-        <li>
-          <input disabled type="checkbox" /> <p>Create base components</p>
-        </li>
-      </ul>
-      <h2>Sample Image</h2>
-      <p>
-        Here's a sample image to test image styling. Make sure it scales well on
-        all screen sizes.
-      </p>
-      <center>
-        <Image
-          alt="Cute kitten"
-          height={400}
-          src="https://placehold.co/600x400"
-          unoptimized
-          width={600}
-        />
-      </center>
-      <h2>Code Example</h2>
-      <pre>
-        <code>
-      {`/* Tailwind example */
-.button {
-  @apply px-4 py-2 bg-blue-600 text-white rounded;
-}`}
-        </code>
-      </pre>
-      <h2>Blockquote</h2>
-      <blockquote>
-        "Design is not just what it looks like and feels like. Design is how it
-        works." — Steve Jobs
-      </blockquote>
-      <h2>Table Example</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Framework</th>
-            <th>Type</th>
-            <th>Stars</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Tailwind CSS</td>
-            <td>Utility-First</td>
-            <td>70k+</td>
-          </tr>
-          <tr>
-            <td>Bootstrap</td>
-            <td>Component-Based</td>
-            <td>160k+</td>
-          </tr>
-          <tr>
-            <td>Bulma</td>
-            <td>Utility/Component Hybrid</td>
-            <td>45k+</td>
-          </tr>
-        </tbody>
-      </table>
-      <h2>Inline Elements</h2>
-      <p>
-        You can <strong>bold</strong> text, <em>italicize</em> it,{" "}
-        <u>underline</u> it, or even add <a href="https://example.com">links</a>
-        . Here’s some <code>inline code</code> too.
-      </p>
-      <h2>Definition List</h2>
-      <dl>
-        <dt>CSS</dt>
-        <dd>Cascading Style Sheets</dd>
-        <dt>HTML</dt>
-        <dd>HyperText Markup Language</dd>
-        <dt>JS</dt>
-        <dd>JavaScript</dd>
-      </dl>
-      <h2>Details and Summary</h2>
-      <details>
-        <summary>Click to expand additional info</summary>
+    <div className="px-6 py-14 space-y-8">
+
+      <h1 className="font-heading text-6xl lg:text-7xl leading-[1.05] tracking-tight">
+        One Ring to Rule Them All
+      </h1>
+
+      <div className="flex items-center justify-between gap-4">
+        <div className="flex gap-2 flex-wrap">
+          <Badge
+            variant="secondary"
+            className="font-narrow uppercase tracking-widest text-[11px] h-auto py-1 px-2 rounded-md"
+          >
+            Article
+          </Badge>
+          <Badge
+            variant="secondary"
+            className="font-narrow uppercase tracking-widest text-[11px] h-auto py-1 px-2 rounded-md"          >
+            Something Cool
+          </Badge>
+        </div>
+        <span className="font-narrow text-muted-foreground text-[11px] tracking-[0.1em] uppercase whitespace-nowrap">
+          Updated 21 Apr, 2026
+        </span>
+      </div>
+
+      <div className="typography">
         <p>
-          Utility CSS simplifies the process of managing and scaling CSS in
-          large projects.
+          Lorem ipsum dolor sit amet consectetur{" "}
+          <strong>adipiscing elit Ut et massa mi.</strong> Aliquam in hendrerit
+          urna. Pellentesque sit amet sapien fringilla, mattis ligula
+          consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam
+          quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit.
         </p>
-      </details>
-      <h2>Inline Elements</h2>
-      <p>
-        You can <strong>bold</strong> text, <em>italicize</em> it,{" "}
-        <u>underline</u> it, or even add <a href="https://example.com">links</a>
-        . Here’s some <code>inline code</code> too.{" "}
-        <mark>Highlight important info</mark> and <small>small text size</small>
-        . <abbr title="HyperText Markup Language">HTML</abbr> is the foundation
-        of the web.
-      </p>
-      <h2>Superscript & Subscript</h2>
-      <p>
-        E = mc<sup>2</sup> is Einstein's mass-energy equivalence. Water is H
-        <sub>2</sub>O.
-      </p>
-      <h2>Conclusion</h2>
-      <p>
-        Whether you're using Tailwind, vanilla CSS, or any other system, a solid
-        understanding of how HTML elements behave is key to great styling. Test
-        extensively to ensure consistent, accessible results across devices.
-      </p>
+      </div>
+
+      {/* Simple card */}
+      <Card>
+        <CardHeader>
+          <div className="flex items-center gap-3">
+            <CardTitle>Simple card</CardTitle>
+            <Badge
+              variant="outline"
+              className="font-narrow uppercase tracking-[0.1em] text-[10px]"
+            >
+              Card Tag
+            </Badge>
+          </div>
+          <CardDescription>
+            This is a simple description of the simple card with toggle switch.
+          </CardDescription>
+        </CardHeader>
+      </Card>
+
+      {/* Link card */}
+      <Card className="flex-row items-center gap-0 py-0 w-fit max-w-[320px]">
+        <div className="w-14 h-14 m-4 rounded-xl bg-muted flex-shrink-0" />
+        <div className="min-w-0 pr-4">
+          <p className="font-semibold text-sm text-card-foreground leading-snug">
+            Link Title
+          </p>
+          <p className="font-narrow text-xs text-muted-foreground truncate tracking-wide">
+            https://www.supercoo...
+          </p>
+        </div>
+      </Card>
+
+      {/* Content card */}
+      <Card className="max-w-[480px] gap-4">
+        <CardHeader>
+          <CardTitle>Title</CardTitle>
+          <CardAction className="font-narrow text-sm font-medium text-card-foreground">
+            Label
+          </CardAction>
+          <CardDescription>Description</CardDescription>
+        </CardHeader>
+        <CardFooter>
+          <Button className="w-full" size="lg">
+            Label
+          </Button>
+        </CardFooter>
+      </Card>
+
     </div>
-  </div>
   )
 }
