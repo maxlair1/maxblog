@@ -20,7 +20,7 @@ function Card({
       data-slot="card"
       data-size={size}
       className={cn(
-        "group/card relative flex flex-col gap-2 overflow-hidden rounded-xl bg-card",
+        "group/card relative flex flex-col gap-2 overflow-hidden rounded-2xl bg-card",
         "text-sm text-card-foreground",
         "border border-border/80",
         "shadow-card",

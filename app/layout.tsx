@@ -2,7 +2,6 @@ import { Castoro, Inter, Geist_Mono, Inter_Tight } from "next/font/google"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
 
 import { CommandPalette } from "../components/commandPalette";
@@ -30,7 +29,7 @@ export default function RootLayout({
         <CommandPalette/>
         <ThemeProvider>
           <aside className="flex flex-col gap-2 p-4 color-foreground-muted">
-            <small>Toggle mode<Kbd>D</Kbd></small>
+            <small>Toggle mode <Kbd>D</Kbd></small>
             <small> 
               Command Palette{' '}
               <KbdGroup className="ml-auto">

@@ -1,6 +1,8 @@
 import MetricsTable from "@/components/ui/metricsTable"
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@ui/accordion";
 import Showcase from "@/components/showcase"
+import { Link } from "@/components/animate-ui/icons/link";
+import { AnimateIcon } from "@/components/animate-ui/icons/icon";
 
 import { Kbd, KbdGroup } from "@/components/ui/kbd";
 import { Command } from "cmdk";
@@ -77,9 +79,12 @@ export default function Page() {
       </Card>
 
       {/* Link card */}
-      <Card className="flex-row items-center gap-0 p-0 w-fit max-w-[320px]">
-        <div className="w-14 h-14 m-4 rounded-xl bg-muted flex-shrink-0" />
-        <div className="min-w-0 pr-4">
+      <AnimateIcon animateOnHover className="w-fit inline-flex cursor-pointer hover:bg-">
+      <Card className="flex-row items-center gap-0 p-0 w-fit max-w-[225px]">
+        <div className="w-14 h-14 m-2 rounded-xl bg-muted flex-shrink-0 flex items-center justify-center">
+          <Link width={24}/>
+        </div>
+        <div className="min-w-0 pr-4 gap-1 flex flex-col">
           <p className="font-semibold text-sm text-card-foreground leading-snug">
             Link Title
           </p>
@@ -88,6 +93,7 @@ export default function Page() {
           </p>
         </div>
       </Card>
+      </AnimateIcon>
 
       {/* Content card */}
       <Card className="max-w-[480px] gap-4">
