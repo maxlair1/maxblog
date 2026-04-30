@@ -21,7 +21,7 @@ export default function MetricsTable({metrics}:MetricsTableProps) {
                             <span className="uppercase font-medium font-narrow text-xs text-muted-foreground">
                                 {metric.label}
                             </span>
-                            <span className="font-narrow text-md text-foreground">
+                            <span className="font-mono text-base text-foreground">
                                 {metric.type === 'number' ? 
                                     <NumberPopIn>{metric.body}</NumberPopIn>
                                 : metric.body}

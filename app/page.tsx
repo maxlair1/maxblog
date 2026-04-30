@@ -1,5 +1,8 @@
 import MetricsTable from "@/components/ui/metricsTable"
-import NumberPopIn from "@/components/ui/numberPopIn"
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@ui/accordion";
+
+import { Kbd, KbdGroup } from "@/components/ui/kbd";
+import { Command } from "cmdk";
 
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -14,7 +17,7 @@ import {
 
 export default function Page() {
   return (
-    <div className="px-6 py-14 space-y-8">
+    <div className="px-6 py-14 space-y-8 mt-10">
         <h1 className="font-heading text-4xl lg:text-6xl leading-[1.05] tracking-tight">
           One Ring to Rule Them All
         </h1>
@@ -44,7 +47,6 @@ export default function Page() {
       ]} />
 
       <div className="typography">
-        <h2>test</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur{" "}
           <strong>adipiscing elit Ut et massa mi.</strong> Aliquam in hendrerit
@@ -94,12 +96,30 @@ export default function Page() {
           </CardAction>
           <CardDescription>Description</CardDescription>
         </CardHeader>
-        <CardFooter>
-          <Button className="w-full" size="lg">
-            Label
+        <CardFooter className="gap-2 flex-wrap">
+          <Button className="w-auto" size="lg">
+            Primary
+          </Button>
+          <Button variant="secondary" className="w-auto" size="lg">
+            Secondary
+          </Button>
+          <Button variant="outline" className="w-auto" size="lg">
+            Outline
+          </Button>
+          <Button variant="magic" className="w-auto" size="lg">
+            Magic
           </Button>
         </CardFooter>
       </Card>
+
+      <Accordion type="single" collapsible defaultValue="item-1">
+        <AccordionItem value="item-1">
+          <AccordionTrigger>What is this component?</AccordionTrigger>
+          <AccordionContent>
+            A collapsible accordion with animated expand/collapse and spring-animated chevron.
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
 
     </div>
   )

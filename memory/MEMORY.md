@@ -1,0 +1,1 @@
+- [maxblog design system setup](project_design_system.md) — design tokens, fonts (Castoro/Inter/Inter Tight), radius scale, component conventions

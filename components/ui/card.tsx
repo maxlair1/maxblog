@@ -2,9 +2,14 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
+const NOISE =
+  "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E\")"
+
 function Card({
   className,
   size = "default",
+  style,
+  children,
   ...props
 }: React.ComponentProps<"div"> & { size?: "default" | "sm" }) {
   return (
@@ -12,11 +17,22 @@ function Card({
       data-slot="card"
       data-size={size}
       className={cn(
-        "group/card flex flex-col gap-2 overflow-hidden rounded-xl bg-card py-4 text-sm text-card-foreground shadow-xs ring-1 ring-foreground/10 has-[>img:first-child]:pt-0 data-[size=sm]:gap-4 data-[size=sm]:py-4 *:[img:first-child]:rounded-t-xl *:[img:last-child]:rounded-b-xl",
+        "group/card relative flex flex-col gap-2 overflow-hidden rounded-xl bg-card",
+        "text-sm text-card-foreground",
+        "border border-border/80",
+        "shadow-card",
+        "has-[>img:first-child]:pt-0 data-[size=sm]:gap-4 data-[size=sm]:py-4",
+        "*:[img:first-child]:rounded-t-xl *:[img:last-child]:rounded-b-xl",
+        "py-4",
         className
       )}
+      style={{ backgroundImage: NOISE, ...style }}
       {...props}
-    />
+    >
+      {/* top-edge highlight */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent" />
+      {children}
+    </div>
   )
 }
 
@@ -25,7 +41,11 @@ function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="card-header"
       className={cn(
-        "group/card-header @container/card-header grid auto-rows-min items-start gap-1 rounded-t-xl px-4 group-data-[size=sm]/card:px-4 has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-6 group-data-[size=sm]/card:[.border-b]:pb-4",
+        "group/card-header @container/card-header grid auto-rows-min items-start gap-1 rounded-t-xl px-4",
+        "group-data-[size=sm]/card:px-4",
+        "has-data-[slot=card-action]:grid-cols-[1fr_auto]",
+        "has-data-[slot=card-description]:grid-rows-[auto_auto]",
+        "[.border-b]:pb-4 group-data-[size=sm]/card:[.border-b]:pb-4",
         className
       )}
       {...props}
@@ -73,7 +93,7 @@ function CardContent({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card-content"
-      className={cn("px-6 group-data-[size=sm]/card:px-4", className)}
+      className={cn("px-4 group-data-[size=sm]/card:px-4", className)}
       {...props}
     />
   )
@@ -84,7 +104,8 @@ function CardFooter({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="card-footer"
       className={cn(
-        "flex items-center rounded-b-xl px-6 group-data-[size=sm]/card:px-4 [.border-t]:pt-6 group-data-[size=sm]/card:[.border-t]:pt-4",
+        "flex items-center rounded-b-xl px-4 group-data-[size=sm]/card:px-4",
+        "[.border-t]:pt-4 group-data-[size=sm]/card:[.border-t]:pt-4",
         className
       )}
       {...props}
