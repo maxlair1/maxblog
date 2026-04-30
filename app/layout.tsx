@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
 
-import { CommandPalette } from "./commandPalette";
+import { CommandPalette } from "../components/commandPalette";
 import { Kbd, KbdGroup } from "@/components/ui/kbd";
 
 const castoro = Castoro({ subsets: ['latin'], weight: '400', variable: '--font-heading' });

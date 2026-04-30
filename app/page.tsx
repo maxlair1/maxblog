@@ -1,5 +1,6 @@
 import MetricsTable from "@/components/ui/metricsTable"
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@ui/accordion";
+import Showcase from "@/components/showcase"
 
 import { Kbd, KbdGroup } from "@/components/ui/kbd";
 import { Command } from "cmdk";
@@ -17,7 +18,8 @@ import {
 
 export default function Page() {
   return (
-    <div className="px-6 py-14 space-y-8 mt-10">
+    <>
+    <div className="px-6 py-10 space-y-8">
         <h1 className="font-heading text-4xl lg:text-6xl leading-[1.05] tracking-tight">
           One Ring to Rule Them All
         </h1>
@@ -75,14 +77,14 @@ export default function Page() {
       </Card>
 
       {/* Link card */}
-      <Card className="flex-row items-center gap-0 py-0 w-fit max-w-[320px]">
+      <Card className="flex-row items-center gap-0 p-0 w-fit max-w-[320px]">
         <div className="w-14 h-14 m-4 rounded-xl bg-muted flex-shrink-0" />
         <div className="min-w-0 pr-4">
           <p className="font-semibold text-sm text-card-foreground leading-snug">
             Link Title
           </p>
           <p className="font-narrow text-xs text-muted-foreground truncate tracking-wide">
-            https://www.supercoo...
+            https://www.supercoolwebsite.com/cool-stuff/
           </p>
         </div>
       </Card>
@@ -122,5 +124,6 @@ export default function Page() {
       </Accordion>
 
     </div>
+    </>
   )
 }
